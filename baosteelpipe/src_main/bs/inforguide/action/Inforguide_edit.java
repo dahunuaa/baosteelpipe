@@ -42,7 +42,6 @@ public class Inforguide_edit extends HttpServlet{
 		String pic_path = editor+"_"+pm.format(new Date())+".png";
 		if(pic.equals("1")){
 			pic_path = req.getParameter("pic_path");
-			System.out.println(pic_path);
 		}
 		
         
