@@ -38,13 +38,17 @@ public class Inforguide_edit extends HttpServlet{
 		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		SimpleDateFormat pm=new SimpleDateFormat("yyyyMMddHHmmss");
 		String time = sm.format(new Date());
-		String pic_path = editor+"_"+pm.format(new Date())+".png";
 		String pic = req.getParameter("pic");
+		String pic_path = editor+"_"+pm.format(new Date())+".png";
+		if(pic.equals("1")){
+			pic_path = req.getParameter("pic_path");
+			System.out.println(pic_path);
+		}
 		
         
 		Inforguide_editDao dao = new Inforguide_editDao(guide_id,guide_title,guide_category,guide_text,time,pic_path,pic);
 		dao.Inforguide_edit();
-		if (pic==null||pic.equals("null")){
+		if (pic==null||pic.equals("null")||pic.equals("1")){
 			
 		}else{
 			pic = pic.substring(22,pic.length());
