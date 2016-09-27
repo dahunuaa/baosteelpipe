@@ -28,7 +28,7 @@ public class New_noticeDao {
 		 Connection conn = DBUtils.getConnection();
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
-         sb.append("INSERT INTO `baosteelpipes_db`.`notice`(`publisher`, `notice`,`notice_title`,`name`,`time`)");
+         sb.append("INSERT INTO `baosteelpipe_db`.`notice`(`publisher`, `notice`,`notice_title`,`name`,`time`)");
          sb.append(" VALUES (?,?,?,?,?)");
 	     PreparedStatement pstmt = null;
 	     try {
