@@ -40,13 +40,11 @@ public class BusinessInformation extends HttpServlet {
 		    List<Map<String,Object>> infos = userDao.BusinessInformationRecord();
       
 		    JSONArray infoslist = JSONArray.fromObject(infos);
-//            System.out.println(infos);
-//		    System.out.println(p_count);
 
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//²»ÄÜÐ´³Éprintln
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

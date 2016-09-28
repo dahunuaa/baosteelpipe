@@ -33,8 +33,8 @@ public class InformationGather extends HttpServlet {
 			throws ServletException, IOException {
 		    HttpSession session = req.getSession();
 		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
-			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
-			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
+			req.setCharacterEncoding("utf-8");
+			resp.setCharacterEncoding("utf-8");
 			String p_count = req.getParameter("pull_count");
 			int count  = Integer.parseInt(p_count);
 			InformationGatherDao Dao = new InformationGatherDao(count);
@@ -47,7 +47,7 @@ public class InformationGather extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//不能写成println
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

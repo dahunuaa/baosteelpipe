@@ -38,7 +38,6 @@ public class New_noticeDao {
 			pstmt.setObject(3,notice_title);
 			pstmt.setObject(4,name);
 			pstmt.setObject(5,time);
-//			System.out.println(notice);
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -41,12 +41,11 @@ public class Uploadfile extends HttpServlet {
     	HttpSession session = req.getSession();
     	user_id=(String) session.getAttribute("id");
         // 上传文件目录
-        String uploadDir = "C:/websoft/tomcat/apache-tomcat-7.0.56/webapps/uploadfiles"; //this.getServletContext().getRealPath("/files");//默认的是tomcat下面webapp下面的目录名
+        String uploadDir = "C:/websoft/tomcat/apache-tomcat-7.0.56/webapps/uploadfiles"; 
         DiskFileItemFactory factory = new DiskFileItemFactory();
         // 设置内存区块大小4KB
         factory.setSizeThreshold(4 * 1024);
         // 设置暂存容器，当上传文件大于设置的内存块大小时，用暂存容器做中转
-//        factory.setRepository(new File(this.getServletContext().getRealPath("/temp")));
         factory.setRepository(new File("C:/websoft/tomcat/apache-tomcat-7.0.56/webapps/temp"));
         ServletFileUpload fileUpload = new ServletFileUpload(factory);
         fileUpload.setSizeMax(1024 * 1024 * 100);//最大值是100M
@@ -64,21 +63,17 @@ public class Uploadfile extends HttpServlet {
             // 普通文件框上传
             if (fileItem.isFormField()) {
                 String filedName = fileItem.getFieldName();
-                String filedValue = fileItem.getString("utf-8");// 编码格式
-//                System.out.println(filedName);// 文件框名称
-//                System.out.println(filedValue);// 文件的值
+                String filedValue = fileItem.getString("utf-8");
             } else {
                 String filedName = fileItem.getFieldName();// 文件上传框的名称
                 // 获取文件上传的文件名
                 String OriginalFileName = takeOutFileName(fileItem.getName());
                 origin_file_name =OriginalFileName; 
-//                System.out.println("原始文件名："+OriginalFileName);
                 if (!"".equals(OriginalFileName)) {
                     // 根据上传的文件名重新命名
                     String newFileName = getNewFileName(OriginalFileName);
 //                    System.out.println(newFileName);
                     new_file_name = newFileName;
-//                    System.out.println("重新名："+newFileName);
                     File writeToFile = new File(uploadDir + File.separator
                             + newFileName);
                     try {

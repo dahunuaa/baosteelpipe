@@ -48,7 +48,6 @@ public class Inforguide_editDao {
 			pstmt.setObject(4,time);
 			pstmt.setObject(5,pic_path);
 			pstmt.setObject(6,guide_id);
-//			System.out.println(guide_id);
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

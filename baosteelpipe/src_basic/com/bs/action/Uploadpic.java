@@ -31,7 +31,6 @@ public class Uploadpic extends HttpServlet{
 		pic = pic.substring(22,pic.length());
 		UploadPicDao dao = new UploadPicDao(path_1, pic);
 		boolean res = dao.uploadpic();
-//		System.out.println(res);
          PrintWriter pw = null;
          try {
 				pw = resp.getWriter(); 

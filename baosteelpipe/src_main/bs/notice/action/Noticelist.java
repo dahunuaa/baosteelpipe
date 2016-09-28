@@ -45,7 +45,7 @@ public class Noticelist extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//����д��println
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

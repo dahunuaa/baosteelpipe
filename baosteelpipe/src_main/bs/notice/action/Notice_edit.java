@@ -26,8 +26,6 @@ public class Notice_edit extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-//		HttpSession session = req.getSession();
-//		String id = (String) session.getAttribute("id");
 		String notice = req.getParameter("notice");
 		String notice_title = req.getParameter("notice_title");
 		String notice_id = req.getParameter("notice_id");
@@ -41,7 +39,7 @@ public class Notice_edit extends HttpServlet{
 		
 		 try {
 			pw = resp.getWriter(); 
-			 pw.print(str);//����д��println
+			 pw.print(str);
 			 pw.flush();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

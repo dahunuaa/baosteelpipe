@@ -27,7 +27,6 @@ public class FeedbackDao {
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
          sb.append("INSERT INTO `baosteelpipe_db`.`feedback`(`provider`, `advice`,`contact`,`provider_name`,`time`)");
-//         System.out.println(contact);
          sb.append(" VALUES (?,?,?,?,?)");
 	     PreparedStatement pstmt = null;
 	     try {

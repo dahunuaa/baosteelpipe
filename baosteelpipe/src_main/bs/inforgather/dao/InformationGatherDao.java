@@ -15,7 +15,6 @@ public class InformationGatherDao {
 	private int count;
 	
 	 public InformationGatherDao(int count){
-//		this.guide_editor = guide_editor;
 		this.count = 5*count;
 		
 	}

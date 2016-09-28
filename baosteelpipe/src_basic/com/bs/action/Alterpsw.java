@@ -45,12 +45,10 @@ public class Alterpsw extends HttpServlet{
 			AlterpswDao dao = new AlterpswDao(id,newpsw);
 			String alterpsw = dao.alterpsw();
 			session.setAttribute("psw", alterpsw);
-//			System.out.println(str);
 		     str = "ok";
 		}else{
 		     str = "fail";
 		}
-//		System.out.println(str);
 		 PrintWriter pw = null;
 		
 		 try {
@@ -58,7 +56,6 @@ public class Alterpsw extends HttpServlet{
 			 pw.print(str);
 			 pw.flush();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			if(pw!=null){

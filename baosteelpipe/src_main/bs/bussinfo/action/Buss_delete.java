@@ -33,7 +33,7 @@ public class Buss_delete extends HttpServlet{
 		
 		 try {
 			pw = resp.getWriter(); 
-			 pw.print(str);//²»ÄÜÐ´³Éprintln
+			 pw.print(str);
 			 pw.flush();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

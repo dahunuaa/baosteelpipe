@@ -61,7 +61,6 @@ public class InforGathering_searchDao {
 				 }
 				 		 
 				 infos.add(item);
-//				System.out.println(infos);
 			 }
 	         
 		} catch (Exception e) {

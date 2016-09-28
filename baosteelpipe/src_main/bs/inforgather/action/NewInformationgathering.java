@@ -40,7 +40,6 @@ public class NewInformationgathering extends HttpServlet{
 		String gather_oil_field = req.getParameter("gather_oil_field");
 		UserNameDao namedao = new UserNameDao(gather_editor);
 		String gather_editor_name = namedao.getName();
-//		System.out.println(gather_text);
 		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time = sm.format(new Date());
 		SimpleDateFormat pm=new SimpleDateFormat("yyyyMMddHHmmss");

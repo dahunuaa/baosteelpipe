@@ -22,7 +22,6 @@ public class UserDao {
 	      if(conn == null)return null;
 	      String sql ="SELECT psw FROM usersinfor WHERE id ="+"'"+this.name+"'";
 	      String psw = "";
-	//第四步 执行查询 使用Statement类中的executeQuery方法执行查询
 	      try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery();

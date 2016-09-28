@@ -46,7 +46,7 @@ public class MyInformationGuiding extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//²»ÄÜÐ´³Éprintln
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

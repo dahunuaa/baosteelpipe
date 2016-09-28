@@ -38,7 +38,6 @@ public class MyInformationgathering extends HttpServlet {
 			int count  = Integer.parseInt(p_count);
 			MyInformationgatheringDao Dao = new MyInformationgatheringDao(id,count);
 		    List<Map<String,Object>> infos = Dao.MyInformationgathering();
-//		    System.out.println(infos);
 		    JSONArray infoslist = JSONArray.fromObject(infos);
             
 		    

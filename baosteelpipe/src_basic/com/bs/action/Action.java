@@ -57,7 +57,7 @@ public class Action extends HttpServlet{
          JSONArray infoslist = JSONArray.fromObject(map);
          try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//²»ÄÜÐ´³Éprintln
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				e.printStackTrace();

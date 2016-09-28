@@ -15,8 +15,6 @@ public class DownloadPicDao {
    
 //		 Í¼Æ¬×ª»¯³Ébase64×Ö·û´®
 	 public String downloadpic() throws Exception{
-//		 String imgFile = "d://111.png";
-		 System.out.println(imgFile);
 		 InputStream in = null;
 		 byte[] data = null;
 		 

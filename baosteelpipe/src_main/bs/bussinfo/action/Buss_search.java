@@ -47,7 +47,7 @@ public class Buss_search extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(busslist);//²»ÄÜÐ´³Éprintln
+				 pw.print(busslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

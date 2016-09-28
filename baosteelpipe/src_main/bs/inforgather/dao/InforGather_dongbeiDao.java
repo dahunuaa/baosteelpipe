@@ -18,7 +18,6 @@ public class InforGather_dongbeiDao {
 	 public InforGather_dongbeiDao(String area,int count){
 		this.area = area;
 		this.count = 5*count;
-//		System.out.println(area);
 	}
 	 public List InforGather_dongbeiRecord(){
          Connection conn =null;

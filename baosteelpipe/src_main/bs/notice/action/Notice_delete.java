@@ -33,7 +33,7 @@ public class Notice_delete extends HttpServlet{
 		
 		 try {
 			pw = resp.getWriter(); 
-			 pw.print(str);//����д��println
+			 pw.print(str);
 			 pw.flush();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

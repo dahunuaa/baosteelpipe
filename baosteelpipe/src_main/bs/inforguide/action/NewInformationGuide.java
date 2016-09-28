@@ -32,7 +32,7 @@ public class NewInformationGuide extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-//		resp.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
 		HttpSession session = req.getSession();
 		String editor =(String) session.getAttribute("id");
 		String title = req.getParameter("guide_title");
@@ -45,7 +45,6 @@ public class NewInformationGuide extends HttpServlet{
 		String time = sm.format(new Date());
 		String pic_path = editor+"_"+pm.format(new Date())+".png";
 		String pic = req.getParameter("pic");
-//		System.out.println(pic);
 		
 		NewInformationGuideDao dao = new NewInformationGuideDao(editor,editor_name,title,category,text,time,pic_path,pic);
 		dao.NewInformationGuide();

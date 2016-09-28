@@ -30,9 +30,7 @@ public class Downloadpic extends HttpServlet{
 		DownloadPicDao dao = new DownloadPicDao(imgfile);
 		try {
 			String base64 = dao.downloadpic();
-			System.out.println(base64);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
          PrintWriter pw = null;

@@ -39,12 +39,12 @@ public class MynoticeDao {
 			 ResultSet rs = pstmt.executeQuery();
 
 			 infos = new ArrayList<Map<String,Object>>();
-			 ResultSetMetaData rsmd = rs.getMetaData();//得到表的结构信息，比如字段名，字段数
-			 while(rs.next()){//遍历列数
+			 ResultSetMetaData rsmd = rs.getMetaData();
+			 while(rs.next()){
 				 Map<String,Object> item = new HashMap<String, Object>();
-				 int nCount = rsmd.getColumnCount();//得到列的数量  getrowcount是获取行的数量
+				 int nCount = rsmd.getColumnCount();
 				 for(int i = 0; i <nCount;++i){
-					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));//将获取的信息存入到map中
+					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));
 				 }
 				 		 
 				 infos.add(item);
@@ -54,7 +54,6 @@ public class MynoticeDao {
 			e.printStackTrace();
 		}finally{
 			DBUtils.close(conn);
-//			System.out.println(infos);
 			return infos;
 		}
 	     

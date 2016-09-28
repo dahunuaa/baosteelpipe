@@ -37,7 +37,6 @@ public class AlterpswDao {
 		
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			DBUtils.close(conn);

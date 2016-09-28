@@ -39,14 +39,11 @@ public class Mynotice extends HttpServlet {
 		    List<Map<String,Object>> infos = mynoticeDao.mynotice();
 
 		    JSONArray infoslist = JSONArray.fromObject(infos);
-//		    System.out.println(infoslist);
-            
-		    
 
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//����д��println
+				 pw.print(infoslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
