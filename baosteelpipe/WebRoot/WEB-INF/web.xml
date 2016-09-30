@@ -257,4 +257,12 @@
     <servlet-name>uploadfile</servlet-name>
     <url-pattern>/uploadfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>Inforgatherpie</servlet-name>
+  <servlet-class>com.bs.action.Inforgatherpie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforgatherpie</servlet-name>
+  <url-pattern>/Inforgatherpie</url-pattern>
+  </servlet-mapping>
 </web-app>
