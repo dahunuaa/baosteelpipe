@@ -28,7 +28,7 @@ public class Add_comment_Dao{
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
         sb.append("INSERT INTO `baosteelpipe_db`.`buss_comment`(`buss_id`,`user_id`, `text`,`name`,`time`)");
-        sb.append(" VALUES (?,?,?,?)");
+        sb.append(" VALUES (?,?,?,?,?)");
 	     PreparedStatement pstmt = null;
 	     try {
 			pstmt = conn.prepareStatement(sb.toString());

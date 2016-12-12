@@ -32,8 +32,10 @@ public class Add_comment extends HttpServlet {
 		String comment_user_id = (String) session.getAttribute("id");
 		String comment_text = req.getParameter("comment_text");
 		String buss_id = req.getParameter("buss_id");
+		
 		UserNameDao namedao = new UserNameDao(comment_user_id);
 		String name = namedao.getName();
+		System.out.print(name);
 		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time = sm.format(new Date());
 		
