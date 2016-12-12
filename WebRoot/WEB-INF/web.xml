@@ -265,4 +265,28 @@
   <servlet-name>Inforgatherpie</servlet-name>
   <url-pattern>/Inforgatherpie</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>Add_comment</servlet-name>
+  <servlet-class>bs.bussinfor.comment.action.Add_comment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Add_comment</servlet-name>
+  <url-pattern>/Add_comment</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  <servlet-name>/Comment_list</servlet-name>
+  <servlet-class>bs.bussinfor.comment.action.Comment_list</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>/Comment_list</servlet-name>
+  <url-pattern>/Comment_list</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  <servlet-name>Del_comment</servlet-name>
+  <servlet-class>bs.bussinfor.comment.action.Del_comment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Del_comment</servlet-name>
+  <url-pattern>/Del_comment</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -20,7 +20,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src_main"/>
 	<classpathentry kind="src" path="src_basic"/>
-	<classpathentry kind="lib" path="E:/Apache Software Foundation/Tomcat 7.0/lib/commons-fileupload-1.2.1.jar"/>
-	<classpathentry kind="lib" path="E:/Apache Software Foundation/Tomcat 7.0/lib/commons-io-1.3.2.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/commons-io-1.3.2.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
