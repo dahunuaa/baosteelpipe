@@ -28,7 +28,8 @@ public class Comment_list extends HttpServlet {
 		    HttpSession session = req.getSession();
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
-			CommentListDao dao = new CommentListDao();
+			String buss_id = req.getParameter("buss_id");
+			CommentListDao dao = new CommentListDao(buss_id);
 		    List<Map<String,Object>> infos = dao.comment_list();
       
 		    JSONArray infoslist = JSONArray.fromObject(infos);

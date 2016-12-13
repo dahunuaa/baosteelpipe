@@ -12,8 +12,9 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class CommentListDao {
-	public CommentListDao(){
-		
+	private String buss_id;
+	public CommentListDao(String buss_id){
+		this.buss_id = buss_id;
 	}
 	public List comment_list(){
         Connection conn =null;
@@ -24,9 +25,11 @@ public class CommentListDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT buss_comment.`buss_id`,`user_id`,`text`,`name`,`time`");
-			 sb.append(" FROM notice");
+			 sb.append("SELECT `comment_id`,`text`,`name`,`time`");
+			 sb.append(" FROM buss_comment");
+			 sb.append(" WHERE buss_comment.`buss_id`=?");
 			 pstmt = conn.prepareStatement(sb.toString());
+			 pstmt.setObject(1, this.buss_id);
 			 ResultSet rs = pstmt.executeQuery();
 	       
 			 infos = new ArrayList<Map<String,Object>>();
