@@ -35,7 +35,7 @@ public class Add_comment extends HttpServlet {
 		
 		UserNameDao namedao = new UserNameDao(comment_user_id);
 		String name = namedao.getName();
-		System.out.print(name);
+//		System.out.print(comment_user_id+":"+buss_id);
 		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time = sm.format(new Date());
 		
