@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import com.bs.system.DBUtils;
 
 public class Comment_deleteDao {
+	private String type;
 	private String comment_id;
 	
-	public Comment_deleteDao(String comment_id){
+	public Comment_deleteDao(String type,String comment_id){
+		this.type = type;
 		this.comment_id = comment_id;
 	}
 	public void comment_delete(){
@@ -17,7 +19,14 @@ public class Comment_deleteDao {
 		 Connection conn = DBUtils.getConnection();
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
-         sb.append("DELETE FROM buss_comment WHERE buss_comment.comment_id=?");
+		 if(type.equals("buss")){
+			sb.append("DELETE FROM buss_comment WHERE buss_comment.comment_id=?");
+		 }else if (type.equals("guide")) {
+			 sb.append("DELETE FROM guide_comment WHERE guide_comment.comment_id=?");
+		 }else if (type.equals("gather")) {
+			 sb.append("DELETE FROM gather_comment WHERE gather_comment.comment_id=?");
+		}
+         
 	     PreparedStatement pstmt = null;
 
 	     try {

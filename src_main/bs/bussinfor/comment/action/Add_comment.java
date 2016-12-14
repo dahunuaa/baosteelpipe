@@ -30,6 +30,7 @@ public class Add_comment extends HttpServlet {
 		HttpSession session = req.getSession();
 		req.setCharacterEncoding("utf-8");
 		String comment_user_id = (String) session.getAttribute("id");
+		String type = req.getParameter("type");
 		String comment_text = req.getParameter("comment_text");
 		String buss_id = req.getParameter("buss_id");
 		
@@ -39,7 +40,7 @@ public class Add_comment extends HttpServlet {
 		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String time = sm.format(new Date());
 		
-		Add_comment_Dao dao = new Add_comment_Dao(buss_id,comment_user_id,comment_text,name,time);
+		Add_comment_Dao dao = new Add_comment_Dao(type,buss_id,comment_user_id,comment_text,name,time);
 		dao.add_comment();
 
 		 String str = "ok";

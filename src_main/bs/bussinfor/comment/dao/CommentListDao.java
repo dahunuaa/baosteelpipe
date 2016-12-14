@@ -12,8 +12,10 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class CommentListDao {
+	private String type;
 	private String buss_id;
-	public CommentListDao(String buss_id){
+	public CommentListDao(String type,String buss_id){
+		this.type = type;
 		this.buss_id = buss_id;
 	}
 	public List comment_list(){
@@ -25,9 +27,20 @@ public class CommentListDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT `comment_id`,`text`,`name`,`time`");
-			 sb.append(" FROM buss_comment");
-			 sb.append(" WHERE buss_comment.`buss_id`=?");
+			 if(type.equals("buss")){
+				 sb.append("SELECT `comment_id`,`user_id`,`text`,`name`,`time`");
+				 sb.append(" FROM buss_comment");
+				 sb.append(" WHERE buss_comment.`buss_id`=?");
+			 }else if (type.equals("guide")) {
+				 sb.append("SELECT `comment_id`,`user_id`,`text`,`name`,`time`");
+				 sb.append(" FROM guide_comment");
+				 sb.append(" WHERE guide_comment.`buss_id`=?");
+			}else if (type.equals("gather")) {
+				 sb.append("SELECT `comment_id`,`user_id`,`text`,`name`,`time`");
+				 sb.append(" FROM gather_comment");
+				 sb.append(" WHERE gather_comment.`buss_id`=?");
+			}
+			 
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, this.buss_id);
 			 ResultSet rs = pstmt.executeQuery();
